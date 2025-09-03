@@ -18,6 +18,7 @@ return function(lspconfig, capabilities, on_attach)
 	local go_revive = require("efmls-configs.linters.go_revive") -- go linter
 	local gofumpt = require("efmls-configs.formatters.gofumpt") -- go formatter
 	local prettier_d = require("efmls-configs.formatters.prettier_d") -- ts/js/solidity/json/docker/html/css/react/svelte/vue formatter
+	-- local prettierd = require("efmls-configs.formatters.prettierd")
 	local eslint_d = require("efmls-configs.linters.eslint_d") -- ts/js/solidity/json/react/svelte/vue linter
 	local fixjson = require("efmls-configs.formatters.fixjson") -- json formatter
 	local shellcheck = require("efmls-configs.linters.shellcheck") -- bash linter
@@ -27,6 +28,10 @@ return function(lspconfig, capabilities, on_attach)
 	local clangformat = require("efmls-configs.formatters.clang_format") -- c/cpp formatter
 	local solhint = require("efmls-configs.linters.solhint") -- solidity linter
 
+    local prettierd = {
+        formatCommand = "prettierd ${INPUT}",
+        formatStdin = true,
+    }
 	lspconfig.efm.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
@@ -78,7 +83,7 @@ return function(lspconfig, capabilities, on_attach)
 				solidity = { solhint, prettier_d },
 				svelte = { eslint_d, prettier_d },
 				typescript = { eslint_d, prettier_d },
-				typescriptreact = { eslint_d, prettier_d },
+				typescriptreact = { eslint_d, prettierd },
 				vue = { eslint_d, prettier_d },
 			},
 		},
