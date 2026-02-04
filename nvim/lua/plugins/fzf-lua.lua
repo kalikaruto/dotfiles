@@ -25,7 +25,7 @@ return {
 			function()
 				require("fzf-lua").buffers()
 			end,
-			desc = "FZF buggers",
+			desc = "FZF buffers",
 		},
 		{
 			"<leader>fh",
@@ -63,6 +63,13 @@ return {
 
 			desc = "fzf workspace symbols",
 		},
+        {
+          "<leader>fv",
+          function()
+            require("fzf-lua").live_grep({ search_dirs = { ".venv" }, rg_opts = "--hidden --no-ignore" })
+          end,
+          desc = "FZF search inside .venv",
+        },
 	},
 	opts = {},
 }

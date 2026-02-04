@@ -6,7 +6,9 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.scrolloff = 10
 opt.sidescrolloff = 8
-opt.wrap = false
+opt.wrap = true
+opt.linebreak = true      -- wrap at word boundaries
+opt.breakindent = true    -- keep indent when wrapped
 opt.cmdheight = 1
 opt.spelllang = { "en", }
 
@@ -100,14 +102,25 @@ opt.guicursor = {
     "sm:block-blinkwait175-blinkoff150-blinkon175-Cursor", -- smooth insert
 }
 -- Folding Settings
-opt.foldmethod = "expr"
+opt.foldmethod = "indent"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldlevel = 90
+opt.foldlevel = 0
 
 -- Split Behaviour
 opt.splitbelow = true
 opt.splitright  = true
 
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
 
 
 

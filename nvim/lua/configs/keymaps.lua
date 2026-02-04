@@ -1,7 +1,8 @@
-keymap("n", "<M-q>", "<cmd>q<CR>", { desc = "Quit" })
+keymap("n", "<M-q>", "<cmd>bdelete<CR>", { desc = "Quit" })
 keymap("n", "<M-w>", "<cmd>w<CR>", { desc = "Save" })
 keymap("n", "<M-W>", "<cmd>wall<CR>", { desc = "Save" })
-keymap("n", "<M-Q>", "<cmd>q!<CR>", { desc = "Quit (force)" })
+keymap("n", "<M-C>", "<cmd>qall!<CR>", { desc = "Save" })
+keymap("n", "<M-Q>", "<cmd>qall<CR>", { desc = "Quit (force)" })
 keymap("n", "<M-a>", "ggVG<CR>", { desc = "Select all & yank" })
 keymap({ "i", "n", "v", "c", "x", "s", "o", "t" }, "<M-;>", "<ESC>", { desc = "Esc in all modes" })
 
@@ -43,7 +44,7 @@ keymap("n", "<M-[>", "v<gv<ESC>", { desc = "Indent left and reselect" })
 keymap("v", "<M-[>", "<gv<ESC>", { desc = "Indent left and reselect" })
 
 -- quick config editing
-keymap("n", "<leader>rc", "<cmd>e ~/.config/nvim/<CR>", { desc = "Edit nvim" })
+keymap("n", "<leader>rc", "<cmd>vsplit ~/.config/nvim/lua<CR>", { desc = "Edit nvim" })
 
 -- better J behaviour
 keymap("n", "<M-J>", "mzJ`z", { desc = "Join without leaving" })
