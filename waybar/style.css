@@ -1,0 +1,89 @@
+/* ─────────────────────────────────────────────
+   Waybar — compact sleek style
+   ───────────────────────────────────────────── */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: rgba(85, 4, 120, 0.9);
+    color: #cdd6f4;
+}
+
+/* modules base */
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 6px;
+    margin: 0 2px;
+}
+
+/* clock */
+#clock {
+    color: #89b4fa;
+}
+
+/* cpu */
+#cpu {
+    color: #f38ba8;
+}
+
+/* memory */
+#memory {
+    color: #a6e3a1;
+}
+
+/* temperature */
+#temperature {
+    color: #94e2d5;
+}
+
+/* battery */
+#battery {
+    color: #a6e3a1;
+}
+
+/* network */
+#network {
+    color: #89b4fa;
+}
+
+/* audio */
+#pulseaudio {
+    color: #f9e2af;
+}
+
+/* tray */
+#tray {
+    padding: 0 4px;
+}
+
+
+#workspaces button.empty {
+    background: #3a3a3a;
+    color: #888;
+}
+
+#workspaces button {
+    background: #222;
+    color: #aaa;
+}
+
+#workspaces button.active {
+    background: teal;
+    color: #111;
+}
